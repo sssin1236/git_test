@@ -1,0 +1,73 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import "reset.scss";
+
+main{
+    width: 100%; height: 100vh;
+    background: sienna;
+    overflow: hidden;
+    position: relative;
+
+    .panel{
+        width: 500px; height: 600px;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+
+        li{
+            width: 100%; height: 100%;
+            position: absolute;
+            top: 0px; left: 0px;
+            transition: 1s;
+
+            .inner{
+                width: 100%; height: 100%;
+                position: absolute;
+                top: 0px; left: 0px;
+                background: linear-gradient(45deg, salmon, tan);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font: 150px/1 'Caveat';
+                color: brown;
+            }
+
+            &:nth-of-type(1){
+                transform: translate(-1200px, 600px) scale(0.5) rotate(-140deg);
+            }
+
+            &:nth-of-type(2){
+                transform: translate(-700px, 300px) scale(0.75) rotate(-60deg);
+            }
+
+            &:nth-of-type(3){
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+
+            &:nth-of-type(4){
+                transform: translate(700px, 300px) scale(0.75) rotate(60deg);
+            }
+
+            &:nth-of-type(5){
+                transform: translate(1200px, 600px) scale(0.5) rotate(140deg);
+            }
+        }
+    }
+}
+
+.prev{
+    display: block;
+    width: 20px; height: 100px; 
+    border:1px solid #fff;
+    position: absolute;
+    top: 50%; left: 50px;
+}
+
+.next{
+    display: block;
+    width: 20px; height: 100px; 
+    border:1px solid #fff;
+    position: absolute;
+    top: 50%; right: 50px;
+}
