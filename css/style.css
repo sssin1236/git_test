@@ -17,7 +17,7 @@ main {
   overflow: hidden;
   position: relative; }
   main .panel {
-    width: 500px;
+    width: 600px;
     height: 600px;
     position: absolute;
     top: 50%;
@@ -29,7 +29,19 @@ main {
       position: absolute;
       top: 0px;
       left: 0px;
-      transition: 1s; }
+      transition: 1s cubic-bezier(0.84, -0.59, 0.57, 1.46); }
+      main .panel li::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, salmon, tan);
+        border-radius: 3%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: scale(0.3);
+        transition: 1s; }
       main .panel li .inner {
         width: 100%;
         height: 100%;
@@ -37,22 +49,30 @@ main {
         top: 0px;
         left: 0px;
         background: linear-gradient(45deg, salmon, tan);
-        border-radius: 50%;
+        border-radius: 3%;
         display: flex;
         justify-content: center;
         align-items: center;
         font: 150px/1 'Caveat';
         color: brown; }
       main .panel li:nth-of-type(1) {
-        transform: translate(-1200px, 600px) scale(0.5) rotate(-140deg); }
+        transform: translate(-1200px, 1000px) scale(0.5);
+        opacity: 0.5; }
       main .panel li:nth-of-type(2) {
-        transform: translate(-700px, 300px) scale(0.75) rotate(-60deg); }
+        transform: translate(-700px, 500px) scale(0.75);
+        opacity: 0.7; }
       main .panel li:nth-of-type(3) {
-        transform: translate(0px, 0px) scale(1) rotate(0deg); }
+        transform: translate(0px, 0px) scale(1);
+        opacity: 1; }
       main .panel li:nth-of-type(4) {
-        transform: translate(700px, 300px) scale(0.75) rotate(60deg); }
+        transform: translate(700px, -500px) scale(0.75);
+        opacity: 0.7; }
       main .panel li:nth-of-type(5) {
-        transform: translate(1200px, 600px) scale(0.5) rotate(140deg); }
+        transform: translate(1200px, -1000px) scale(0.5);
+        opacity: 0.5; }
+      main .panel li.on::before {
+        transform: scale(1.5);
+        opacity: 0; }
 
 .prev {
   display: block;
