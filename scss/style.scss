@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Zen+Kurenaido&display=swap');
 @import "reset.scss";
 
 main{
@@ -42,17 +42,32 @@ main{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font: 150px/1 'Caveat';
-                color: brown;
+                
+
+                p{
+                    font: bold 100px/1 'Zen Kurenaido';
+                    color: brown;
+                    text-shadow: 5px 5px 10px rgba(165, 42, 42, 0.2);
+                    transition: 1s;
+                    opacity: 0;
+
+                    span{
+                        position: relative;
+                    }
+                }
+
+                &:hover {
+                    p {opacity: 1;}
+                 }
             }
 
             &:nth-of-type(1){
-                transform: translate(-1200px, 1000px) scale(0.5);
+                transform: translate(-1200px, 600px) scale(0.5);
                 opacity: 0.5;
             }
 
             &:nth-of-type(2){
-                transform: translate(-700px, 500px) scale(0.75);
+                transform: translate(-700px, 300px) scale(0.75);
                 opacity: 0.7;
             }
 
@@ -62,12 +77,12 @@ main{
             }
 
             &:nth-of-type(4){
-                transform: translate(700px, -500px) scale(0.75);
+                transform: translate(700px, -300px) scale(0.75);
                 opacity: 0.7;
             }
 
             &:nth-of-type(5){
-                transform: translate(1200px, -1000px) scale(0.5);
+                transform: translate(1200px, -600px) scale(0.5);
                 opacity: 0.5;
             }
 
@@ -87,6 +102,7 @@ main{
     border:1px solid #fff;
     position: absolute;
     top: 50%; left: 50px;
+    margin-top: -50px;
 }
 
 .next{
@@ -95,4 +111,5 @@ main{
     border:1px solid #fff;
     position: absolute;
     top: 50%; right: 50px;
+    margin-top: -50px;
 }
